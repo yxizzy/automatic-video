@@ -4,14 +4,15 @@ import {HomeComponent} from './home.component';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {HttpService} from '../services/http.service';
 import {RouterTestingModule} from '@angular/router/testing';
-import {ComponentsModule, Snippet} from '../components/components.module';
+import {ComponentsModule} from '../components/components.module';
+import {Snippet} from '../models';
 import {environment} from '../../environments/environment';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   let httpMock: HttpTestingController;
-  const snippets: Snippet[] = [
+  const snippets: Array<Snippet> = [
     {
       speaker: 'Cust',
       snippet: 'Detrius nobilis zeta est.',

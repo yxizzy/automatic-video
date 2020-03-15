@@ -3,7 +3,7 @@ import {HttpService} from '../services/http.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
-import {Snippet} from '../components/components.module';
+import {Snippet} from '../models';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   //component variables
   title = 'Moment from meeting with Two Pillars';
-  snippets: Snippet[] = [];
+  snippets: Array<Snippet> = [];
   error: boolean | string = false;
   id: string;
   public apiUrl = environment.apiLink;
