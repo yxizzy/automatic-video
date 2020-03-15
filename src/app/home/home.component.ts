@@ -12,6 +12,7 @@ import {Snippet} from '../components/components.module';
 })
 export class HomeComponent implements OnInit {
 
+  //component variables
   title = 'Moment from meeting with Two Pillars';
   snippets: Snippet[] = [];
   error: boolean | string = false;
@@ -30,6 +31,11 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /**
+   * get the id paramete
+   * if success, call sortSnippets() with response to sort transcript
+   * on error, set error with appropriate error message
+   */
   getSnippets(params: Params) {
     return new Observable(resolve => {
       this.id = params.id;
@@ -41,11 +47,11 @@ export class HomeComponent implements OnInit {
               resolve.next(this.error);
             },
             () => {
-              this.setError('Hoops!!!', `Video dose not exist`);
+              this.setError('Oops!!!', `Video with this ID does not exist`);
               resolve.next(this.error);
             });
       } else {
-        this.setError('Hoops!!!', 'No id');
+        this.setError('Something went wrong!!!', 'Please Provide A Valid Video ID');
         resolve.next(this.error);
       }
     });
@@ -56,6 +62,7 @@ export class HomeComponent implements OnInit {
     this.error = message;
   }
 
+  //sort transcripts by time
   sortSnippets(snippet: Snippet[]) {
     return snippet.sort((a, b) => (a.time - b.time));
   }

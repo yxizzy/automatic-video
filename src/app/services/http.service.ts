@@ -13,13 +13,17 @@ export class HttpService {
     private http: HttpClient,
   ) {
   }
-
+  /**
+   * This gets the transcripts fro the API
+   * @param id this is the id of the corresponding transcript
+   * @returns video transcript in a json format
+   */
   getSnippets(id: string): Observable<Snippet[]> {
     return this.http
       .get<Snippet[]>(`${environment.apiLink}/${id}.json`, {
         responseType: 'json',
         headers: new HttpHeaders({
-          'Content-Type': 'application.'
+          'Content-Type': 'application/json.'
         }),
       });
   }

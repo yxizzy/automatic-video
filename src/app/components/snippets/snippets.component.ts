@@ -17,6 +17,7 @@ export class SnippetsComponent implements OnInit {
   ngOnInit() {
   }
 
+  //group snippets by the same speaker in sequence
   groupSnippets(list: Snippet[]) {
     const groups: Snippet[][] = [];
 

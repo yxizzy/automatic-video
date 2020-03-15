@@ -59,7 +59,7 @@ describe('HomeComponent', () => {
     expect(component.sortSnippets(snippets)[2].time).toBe(3);
   });
 
-  it('should display "Video dose not exist"', () => {
+  it('should display "Video does not exist"', () => {
     component.getSnippets.call(component, {id: 'invalid-id'})
       .subscribe(value => {
         expect(value).toBe(false);
@@ -70,15 +70,15 @@ describe('HomeComponent', () => {
     expect(req.request.responseType).toEqual('json');
   });
 
-  it('should display "No id"', () => {
+  it('should display "Please Provide A Valid Video ID"', () => {
     component.getSnippets.call(component, {})
       .subscribe(value => {
-        expect(value).toBe('No id');
+        expect(value).toBe('Please Provide A Valid Video ID');
       });
   });
 
-  it('should set error to status to "Hoops!!!"', () => {
-    component.setError.call(component, 'Hoops!!!', 'Hoops!!!');
-    expect(component.error).toBe('Hoops!!!');
+  it('should set error to status to "Oops!!!"', () => {
+    component.setError.call(component, 'Oops!!!', 'Oops!!!');
+    expect(component.error).toBe('Oops!!!');
   });
 });
