@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  background-color: #EFEFEF;
+  // margin: 0;
+  padding: 0;
+  font-family: SFUIText-Regular;
+  color: #333333;
+  // position: fixed;
+  width: 100%
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 28px;
+  margin: 1.5%
+}
+
+h2, h3 {
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 28px;
+}
+
+p {
+  line-height: 20px;
+  font-size: 15px;
+}
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}

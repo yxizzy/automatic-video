@@ -1,0 +1,15 @@
+<div class="frame">
+  <h1 class="header">{{title}}</h1>
+  <div *ngIf="id && !error" class="group">
+    <video class="player" controls src="{{apiUrl + '/' + id + '.mp4'}}"></video>
+  </div>
+  <div *ngIf="id && !error" class="snippets">
+    <!-- <app-snippets [snippets]="snippets" class="list"></app-snippets> -->
+    <app-snippets [snippets]="snippets"></app-snippets>
+  </div>
+  <div class="base-logo">
+    <img alt=" " src="https://static.chorus.ai/images/chorus-logo.svg">
+  </div>
+  <app-error [status]="error"></app-error>
+</div>
+

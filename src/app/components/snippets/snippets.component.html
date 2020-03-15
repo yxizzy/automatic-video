@@ -1,0 +1,11 @@
+<ul class="snippet-list">
+  <li *ngFor="let snippet of groupSnippets(snippets)">
+    <div class="snippet-con">
+      <div class="speaker-indicator" title="{{snippet[0].speaker | lowercase}}"></div>
+      <div class="snippet-content">
+        <p class="speaker">{{snippet[0].speaker}}</p>
+        <p *ngFor="let speech of snippet" class="snippet">{{speech.snippet}}</p>
+      </div>
+    </div>
+  </li>
+</ul>

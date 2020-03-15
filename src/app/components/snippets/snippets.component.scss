@@ -1,0 +1,50 @@
+.snippet-list {
+  align-self: flex-start;
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 1em;
+
+    .snippet-con {
+      display: flex;
+
+      .speaker-indicator {
+        width: 28px;
+        height: 28px;
+        border-radius: 100px;
+        align-self: flex-end;
+        box-sizing: border-box;
+      }
+
+      .speaker-indicator[title='cust'] {
+        background-color: rgb(238, 110, 255, 0.10);
+        border: 1px solid #EE6EFF;
+      }
+
+      .speaker-indicator[title='rep'] {
+        background-color: rgb(0, 167, 209, 0.10);
+        border: 1px solid #00A7D1;
+      }
+
+      .snippet-content {
+        margin-left: 0.5em;
+
+        .speaker {
+          line-height: 16px;
+          font-size: 12px;
+          margin: 0 0 0 1em;
+        }
+
+        .snippet {
+          padding: 4% 6%;
+          margin: 1px 0;
+          background-color: #F7F7F7;
+          border-radius: 20px;
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
